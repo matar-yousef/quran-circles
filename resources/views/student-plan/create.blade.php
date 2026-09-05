@@ -82,7 +82,6 @@
                     </div>
                 </div>
 
-                <!-- تم تعديل الأزرار هنا لتتطابق وتستجيب مع الشاشات الصغيرة -->
                 <div class="d-flex justify-content-start align-items-center gap-2 pt-3 border-top border-light">
                     <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm font-cairo" style="font-size: 0.9rem; font-family: 'Cairo', sans-serif; background-color: #198754; border-color: #198754;">اعتماد وحفظ الخطة</button>
                     <a href="{{ route('student-plans.index') }}" class="btn btn-light rounded-pill px-4 py-2 fw-semibold text-muted border border-secondary-subtle" style="font-size: 0.9rem; font-family: 'Cairo', sans-serif;">إلغاء</a>

@@ -20,10 +20,8 @@ class EnsureUserHasHalaqa
             return redirect()->route('login');
         }
 
-        // التحقق مما إذا كان المحفظ لا يمتلك أي حلقة
         if ($user->halaqas()->count() === 0) {
 
-            // 🔧 تم تعديل الأسماء هنا إلى المفرد (halaqa)
             if (
                 ! $request->routeIs('halaqa.create') &&
                 ! $request->routeIs('halaqa.store') &&

@@ -65,7 +65,6 @@ class DailyTrackingController extends Controller
 
             $allowedStudentIds = $userHalaqa->students()->pluck('id')->toArray();
 
-            // التحقق الصارم من أن كل الطلاب ينتمون لحلقة المعلم الحالية
             foreach ($trackingData as $item) {
                 $studentId = $item['student_id'] ?? null;
                 if ($studentId && !in_array($studentId, $allowedStudentIds)) {

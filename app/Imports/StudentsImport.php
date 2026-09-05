@@ -19,17 +19,14 @@ class StudentsImport implements ToModel, WithStartRow
 
     public function startRow(): int
     {
-        return 11; // البدء من الصف 11 حيث تبدأ البيانات الحقيقية
+        return 11;
     }
 
     public function model(array $row)
     {
-        // إذا كان اسم الطالب فارغاً، تخطي الصف
         if (empty($row[1])) {
             return null;
         }
-
-        // معالجة تاريخ الميلاد (الموجود في العمود B / الفهرس 2)
         $birthDate = '2012-01-01';
         if (! empty($row[2])) {
             $val = $row[2];
@@ -43,14 +40,14 @@ class StudentsImport implements ToModel, WithStartRow
         }
 
         return new Student([
-            'full_name' => $row[1] ?? 'طالب جديد', // العمود الثاني: اسم الطالب
-            'birth_date' => $birthDate,                 // العمود الثالث: تاريخ الميلاد
-            'student_id_number' => $row[3] ?? '000000000', // العمود الرابع: هوية الطالب
-            'guardian_phone' => $row[4] ?? '0000000000', // العمود الخامس: جوال ولي الأمر
-            'address' => $row[5] ?? 'غير محدد', // العمود السادس: العنوان
-            'father_id_number' => $row[6] ?? '000000000', // العمود السابع: هوية الأب
-            'father_full_name' => $row[7] ?? 'غير متوفر', // العمود الثامن: اسم الأب
-            'grade' => $row[8] ?? 'غير محدد', // العمود التاسع (أقصى اليسار): الصف
+            'full_name' => $row[1] ?? 'طالب جديد',
+            'birth_date' => $birthDate,
+            'student_id_number' => $row[3] ?? '000000000',
+            'guardian_phone' => $row[4] ?? '0000000000',
+            'address' => $row[5] ?? 'غير محدد',
+            'father_id_number' => $row[6] ?? '000000000',
+            'father_full_name' => $row[7] ?? 'غير متوفر',
+            'grade' => $row[8] ?? 'غير محدد',
             'current_juz' => 1,
             'halaqa_id' => $this->halaqaId,
         ]);

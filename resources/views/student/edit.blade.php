@@ -21,7 +21,6 @@
         @csrf
         @method('PUT')
 
-        <!-- Card 1: معلومات الطالب الشخصية -->
         <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4 bg-white">
             <div class="d-flex align-items-center mb-3 pb-2 border-bottom">
                 <div class="bg-success-subtle text-success p-2 rounded-3 me-2 fs-5 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
@@ -77,7 +76,6 @@
             </div>
         </div>
 
-        <!-- Card 2: معلومات ولي الأمر -->
         <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4 bg-white">
             <div class="d-flex align-items-center mb-3 pb-2 border-bottom">
                 <div class="bg-primary-subtle text-primary p-2 rounded-3 me-2 fs-5 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
@@ -122,7 +120,6 @@
             </div>
         </div>
 
-        <!-- Card 3: المعلومات الأكاديمية -->
         <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4 bg-white">
             <div class="d-flex align-items-center mb-3 pb-2 border-bottom">
                 <div class="bg-warning-subtle text-warning p-2 rounded-3 me-2 fs-5 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
@@ -163,7 +160,6 @@
             </div>
         </div>
 
-        <!-- Action Buttons -->
         <div class="d-flex flex-wrap justify-content-start gap-2 mt-4">
             <button type="submit" class="btn btn-success px-5 py-2.5 rounded-pill fw-bold shadow-sm font-cairo" style="font-size: 0.95rem;">
                 <i class="bi bi-check-lg ms-1"></i> حفظ التعديلات

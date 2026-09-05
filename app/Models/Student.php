@@ -19,25 +19,20 @@ class Student extends Model
         'halaqa_id',
     ];
 
-    // علاقة الحلقة
     public function halaqa()
     {
         return $this->belongsTo(Halaqa::class);
     }
 
-    // علاقة المتابعة اليومية (بصيغة الجمع لتناسب الاتفاقية الرسمية في Laravel)
     public function dailyTrackings()
     {
         return $this->hasMany(DailyTracking::class);
     }
 
-    // للإبقاء على التوافق إذا كنت تستخدم الاسم القديم في مكان آخر
     public function daily_tracking()
     {
         return $this->dailyTrackings();
     }
-
-    // علاقة خطة الطالب
     public function studentPlan()
     {
         return $this->hasOne(StudentPlan::class);
@@ -48,7 +43,6 @@ class Student extends Model
         return $this->studentPlan();
     }
 
-    // علاقة دورات الطالب
     public function studentCourses()
     {
         return $this->hasMany(StudentCourse::class);
@@ -64,7 +58,6 @@ class Student extends Model
         return $this->hasMany(Exam::class);
     }
 
-    // جلب تاريخ آخر يوم قام فيه الطالب بالتسميع الفعلي (حفظ أو مراجعة)
     public function lastActiveTrackingDate()
     {
         return $this->dailyTrackings()
@@ -72,7 +65,7 @@ class Student extends Model
             ->where(function ($query) {
                 $query->where('hifz_pages', '>', 0)
                     ->orWhere('muraja_pages', '>', 0)
-                    ->orWhereHas('details'); // إذا كان يعتمد على جدول التفاصيل
+                    ->orWhereHas('details');
             })
             ->latest('date')
             ->value('date');

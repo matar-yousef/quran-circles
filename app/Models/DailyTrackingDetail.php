@@ -16,17 +16,15 @@ class DailyTrackingDetail extends Model
         'type',
         'surah_id',
         'from_ayah',
-        'to_surah_id', // أضفنا الحقل هنا
+        'to_surah_id',
         'to_ayah',
     ];
 
-    // علاقة سورة البداية
     public function surah()
     {
         return $this->belongsTo(Surah::class, 'surah_id');
     }
 
-    // علاقة سورة النهاية
     public function toSurah()
     {
         return $this->belongsTo(Surah::class, 'to_surah_id');

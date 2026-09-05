@@ -29,7 +29,6 @@ class StudentPlan extends Model
         return $this->duration * $this->days_per_week * 4;
     }
 
-    // إرجاع دالة حساب أيام الحضور الفعلي
     public function getTotalAttendedAttribute()
     {
         return DailyTracking::where('student_id', $this->student_id)
@@ -49,7 +48,6 @@ class StudentPlan extends Model
         return now()->greaterThan($this->end_date);
     }
 
-    // 1️⃣ الهدف الكلي بالصفحات
     public function getTotalTargetPagesAttribute()
     {
         $days = $this->total_target_days ?? 0;
@@ -65,7 +63,7 @@ class StudentPlan extends Model
         return 0;
     }
 
-    // 2️⃣ المُنجز الفعلي بالصفحات
+
     public function getTotalAchievedPagesAttribute()
     {
         $startDate = $this->start_date;
@@ -90,7 +88,6 @@ class StudentPlan extends Model
         return 0;
     }
 
-    // 3️⃣ نسبة التقدم الجديدة (تعتمد على الصفحات بدلاً من الأيام)
     public function getProgressPercentageAttribute()
     {
         $target = $this->total_target_pages;
