@@ -122,5 +122,5 @@ This project is structured into two main areas:
 **Yousef Matar**
 
 - GitHub: [@matar-yousef](https://github.com/matar-yousef)
-- LinkedIn: [Your Profile Name](https://www.linkedin.com/in/yousef-matar-28264a422/)
-- Email: [dev.yousef.matar@gmail.com] 
+- LinkedIn: [Yousef Matar](https://www.linkedin.com/in/yousef-matar-28264a422/)
+- Email: [dev.yousef.matar@gmail.com]
